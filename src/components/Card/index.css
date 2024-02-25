@@ -1,6 +1,6 @@
 .card{
-    width: 1250px;
-    background-color: #fff;
+    width: 1320px;
+    background-color: var(--primary-color);
     margin-right: auto;
     margin-left: auto;
     margin-top: 5rem;
@@ -8,17 +8,52 @@
 
 .info{
     display: flex;
+    justify-content: space-between;
 }
 
 .text{
-    width: 750px;
+    width: 700px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
 h1{
-    font-size: 80px;
+    font-size: 65px;
     font-weight: 700;
     line-height: 90px;
+  }
+
+  p{
+    width: 650px;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 45px;
+    letter-spacing: 0em;
+    color: #6B6868;
+    margin-bottom: 5rem;
+  }
+
+  .buttons{
+    display: flex;
+    gap: 2rem;
+  }
+
+  button{
+    padding: 20px 40px;
+    border: 2px solid var(--secondary-color);
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+  }
+
+  .white{
+    background-color: #fff;
+    color: #000;
+  }
+
+  .black{
+    background-color: #000;
+    color: #fff;
   }

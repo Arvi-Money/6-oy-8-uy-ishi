@@ -4,13 +4,25 @@
   box-sizing: border-box;
 }
 
+:root{
+  --primary-color: #fff;
+  --secondary-color: #000;
+}
+
+.darkMode{
+  --primary-color: #000;
+  --secondary-color: #fff;
+}
+
 body{
   background-image: linear-gradient(to right, #1f3040 0%, #1f3040 50%, #ff9442 50%, #ff9442 100%);
   font-family: "Roboto", sans-serif;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
 }
 
 .container{
   width: 100%;
-  max-width: 1050px;
+  max-width: 1200px;
   margin: 0 auto;
 }
