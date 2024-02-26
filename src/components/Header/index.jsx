@@ -56,8 +56,19 @@ function Header() {
         i18n.changeLanguage(selectedLanguage);
         localStorage.setItem('i18nextLng', selectedLanguage);
     }
+
+    useEffect(() => {
+        const savedLanguage = localStorage.getItem("i18nextLng");
+        if (savedLanguage) {
+            i18n.changeLanguage(savedLanguage);
+            if (selectRef.current) {
+                selectRef.current.value = savedLanguage;
+            }
+        }
+    }, [i18n]);
     
 
+    
   return (
     <>
        <header>
