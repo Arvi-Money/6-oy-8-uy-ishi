@@ -2,8 +2,11 @@ import Header from '../Header'
 import './index.css'
 import img from '../../assets/Boy.svg'
 import hand from '../../assets/hand.svg'
+import { useTranslation } from "react-i18next";
 
 function Card() {
+    const {t, i18n} = useTranslation();
+
   return (
     <>
         <div className="card">
@@ -11,11 +14,11 @@ function Card() {
             <div className="container">
                 <div className="info">
                     <div className="text">
-                        <h1>Hi <img src={hand} alt="" />,<br /> I’m Charles,<br /> Front-end Developer</h1>
-                        <p>I design and develop experiences that make people’s lives simpler through Web and Mobile apps.I work with FIgma , HTML5, CSS3, JavaScript, React, ReactNative and Flutter.</p>
+                        <h1>{t("Greeting")}</h1>
+                        <p>{t("Info")}</p>
                         <div className="buttons">
-                            <button className='white'>HIRE ME</button>
-                            <button className='black'>SEE MY PROJECTS</button>
+                            <button className='white'>{t("Whitebtn")}</button>
+                            <button className='black'>{t("Blackbtn")}</button>
                         </div>
                     </div>
                     <div className="img">

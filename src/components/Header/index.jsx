@@ -1,9 +1,14 @@
 import './index.css'
 import sun from '../../assets/sun-regular.svg'
 import  moon from '../../assets/moon.svg'
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
+import { useTranslation } from "react-i18next";
+
 
 function Header() {
+    const {t, i18n} = useTranslation();
+    const selectRef = useRef("");
+
     useEffect(() => {
         const savedMode = localStorage.getItem('darkMode');
         if (savedMode === 'dark') {
@@ -45,6 +50,12 @@ function Header() {
             enableDarkMode();
         }
     }
+
+    function handleChange(params) {
+        const selectedLanguage = selectRef.current.value;
+        i18n.changeLanguage(selectedLanguage);
+        localStorage.setItem('i18nextLng', selectedLanguage);
+    }
     
 
   return (
@@ -53,19 +64,19 @@ function Header() {
         <div className="container">
             <nav>
                 <ul>
-                    <li><a href="#">About me</a></li>
-                    <li><a href="#">Skills</a></li>
-                    <li><a href="#">Project</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">{t("About me")}</a></li>
+                    <li><a href="#">{t("Skills")}</a></li>
+                    <li><a href="#">{t("Project")}</a></li>
+                    <li><a href="#">{t("Contact")}</a></li>
                 </ul>
-                <select name="" id="">
+                <select name="" id="select" onChange={handleChange} ref={selectRef}>
                     <option value="uzb">uzb</option>
                     <option value="eng">eng</option>
                     <option value="rus">rus</option>
                 </select>
                 <div className="dark-div" onClick={handleModeToggle}>
                 <img className='sunImg' src={moon} alt="" width="20px"/>
-                <span className='dark'>Dark Mode</span>
+                <span className='dark'>{t("Dark Mode")}</span>
             </div>
             </nav>
          
